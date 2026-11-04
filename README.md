@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Meta Model API Configuration
 
-## Getting Started
+CorroSense integrates with Meta's official Meta Model API for AI-powered corrosion inspection and maintenance assistance.
 
-First, run the development server:
+The integration uses Meta's Muse models and image segmentation capabilities.
 
-```bash
+1. Get your API key
+Visit the official Meta Model API developer platform: https://dev.meta.ai/
+Sign in to your Meta developer account.
+Open the Model API dashboard.
+Generate your API key.
+
+Refer to the official documentation: https://dev.meta.ai/docs/overview
+
+2. Configure your API key
+
+Create a .env.local file in the root directory of the project.
+
+Add the following:
+
+MODEL_API_KEY=YOUR_META_MODEL_API_KEY
+CORROSENSE_LIVE_ANALYSIS=true
+
+
+Replace YOUR_META_MODEL_API_KEY with your own API key generated through Meta Model API.
+
+3. Important security information
+Never share your API key publicly.
+Never upload .env.local to GitHub.
+API keys must remain on the server side.
+Restart the development server after modifying environment variables.
+4. Run CorroSense (bash)
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000 to access the application.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Note: Access to Meta Model API may be subject to account eligibility, usage limits and applicable pricing.
