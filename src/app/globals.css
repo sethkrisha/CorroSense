@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b1120;
+  --foreground: #f1f5f9;
+  --surface: #111c30;
+  --border: #26364d;
+  --muted: #94a3b8;
+  --accent: #5eead4;
 }
 
 @theme inline {
@@ -12,15 +16,69 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@media print {
+
+  @page {
+    size: A4;
+    margin: 18mm 14mm;
+  }
+
+  /* Allow the report to flow across pages */
+  .report-section {
+    display: block !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  /* Keep individual report cards together */
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-column-break-inside: avoid !important;
+  }
+
+  /* Keep headings with the following content */
+  .report-section h1,
+  .report-section h2,
+  .report-section h3 {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+}
+@media print {
+  .print\:hidden {
+    display: none !important;
+  }
 }

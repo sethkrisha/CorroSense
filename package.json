@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@meta-sam/parser": "^0.1.0",
     "next": "16.4.3",
+    "openai": "^7.45.1",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
