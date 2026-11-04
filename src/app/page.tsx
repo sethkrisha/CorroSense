@@ -1645,42 +1645,7 @@ async function segmentImage() {
               Selected: {afterFileName}
             </p>
           )}
-          <button
-            type="button"
-            disabled={!imagePreview || !afterImagePreview || isComparing}
-            onClick={handleCompare}
-            className="mt-6 w-full rounded-lg bg-teal-300 px-5 py-3 font-semibold text-slate-950 transition hover:bg-teal-200 disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            {isComparing
-              ? "Comparing photographs..."
-              : "Compare before & after with AI →"}
-          </button>
-          {isComparing && (
-            <p role="status" className="mt-3 text-sm text-teal-300">
-              Muse Spark is examining both photographs and evaluating
-              visible repair progress. Please wait...
-            </p>
-          )}
-
-          {comparisonError && (
-            <div role="alert" className="mt-4 rounded-lg border border-red-900 bg-red-950/30 p-4 text-sm text-red-200">
-              {comparisonError}
-            </div>
-          )}
-
-          {comparison && (
-            <div className="mt-6 rounded-xl border border-teal-800 bg-slate-900/70 p-5">
-              <h3 className="font-semibold text-teal-300">
-                AI repair progress assessment
-              </h3>
-
-              <div className="mt-4 whitespace-pre-wrap text-sm leading-7 text-slate-200">
-                {comparison}
-              </div>
-              
-            </div>
-            
-          )}
+          
           <div className="mt-6 print-avoid-break">
             <label
               htmlFor="repairOutcome"
@@ -1722,6 +1687,42 @@ async function segmentImage() {
               className="w-full resize-y rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-sm outline-none placeholder:text-slate-600 focus:border-teal-400"
             />
           </div>
+          <button
+            type="button"
+            disabled={!imagePreview || !afterImagePreview || isComparing}
+            onClick={handleCompare}
+            className="mt-6 w-full rounded-lg bg-teal-300 px-5 py-3 font-semibold text-slate-950 transition hover:bg-teal-200 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            {isComparing
+              ? "Comparing photographs..."
+              : "Compare before & after with AI →"}
+          </button>
+          {isComparing && (
+            <p role="status" className="mt-3 text-sm text-teal-300">
+              Muse Spark is examining both photographs and evaluating
+              visible repair progress. Please wait...
+            </p>
+          )}
+
+          {comparisonError && (
+            <div role="alert" className="mt-4 rounded-lg border border-red-900 bg-red-950/30 p-4 text-sm text-red-200">
+              {comparisonError}
+            </div>
+          )}
+
+          {comparison && (
+            <div className="mt-6 rounded-xl border border-teal-800 bg-slate-900/70 p-5">
+              <h3 className="font-semibold text-teal-300">
+                AI repair progress assessment
+              </h3>
+
+              <div className="mt-4 whitespace-pre-wrap text-sm leading-7 text-slate-200">
+                {comparison}
+              </div>
+              
+            </div>
+            
+          )}
         </section>
         <div className="mt-8 print:hidden">
           <button
